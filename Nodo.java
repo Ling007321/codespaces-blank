@@ -30,10 +30,9 @@ public class Nodo<T> {
             return succ;
 }
 
-                                                                                                                                    public void setSucc(Nodo<T> succ) {
-                                                                                                                                            this.succ = succ;
-                                                                                                                                                }
-
-
-                                                                                                                                                }
+        public void setSucc(Nodo<T> succ) {
+            this.succ = succ;
 }
+}
+
+                                                                                                                                                }
