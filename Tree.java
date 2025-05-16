@@ -4,14 +4,26 @@ public class Tree<T extends Comparable<T>> {
     public Tree() {
         root = null;
     }
-
-    public void add(T value) {
-        Treenode<T> newNode = new Treenode<>(value);
-        if (root == null) {
-            root = newNode;
-        } else {
-            add(value);
+    private void recursiveAdd(Treenode<T> p,T value){
+        if(p.getValue().compareTo(value)<0){
+            if(p.getLeft() == null){
+                p.setLeft(new Treenode<T>(value));
+        }else{
+            if ( p.getRight() == null){
+                p.setRigth(new Treenode<T>(value));
+            }else{
+                recursiveAdd(p.getRigth(),value);
+            }
         }
     }
 
+    public void add(T value) {
+
+        if (root == null) root = new Treenode<T>(value);
+        recursiveAdd(root,value);
+         
+    }
+
+
+    p
 }
